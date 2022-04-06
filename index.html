@@ -20,10 +20,35 @@
 
 <body>
 	<!-- Navbar -->
-	<nav id="navbar"></nav>
+	<nav id="navbar">
+		<div id="navbar">
+			<div class="navbar__logo">
+				<i class="fa-solid fa-burger"></i>
+				<a href="#">TIMLEE</a>
+			</div>
+			<ul class="navbar__menu">
+				<li class="navbar__menu__item" data-link="#home">Home</li>
+				<li class="navbar__menu__item" data-link="#about">About</li>
+				<li class="navbar__menu__item" data-link="#skills">Skills</li>
+				<li class="navbar__menu__item" data-link="#work">My work</li>
+				<li class="navbar__menu__item" data-link="#testimonials">Testimonials</li>
+				<li class="navbar__menu__item" data-link="#contact">Contact</li>
+			</ul>
+			<button>
+				<i class="fa-solid fa-bars"></i>
+			</button>
+		</div>
+	</nav>
 
 	<!-- Home -->
-	<section id="home"></section>
+	<section id="home">
+		<div class="home__container">
+			<img src="https://placekitten.com/200/200" alt="logo" class="home__avatar">
+			<h1 class="home__title">Hello,<br>I'm a developer</h1>
+			<h2 class="home__description">I love learning & training anything.</h2>
+			<button class="home__contact">Contact Me</button>
+		</div>
+	</section>
 
 	<!-- About -->
 	<section id="about"></section>
