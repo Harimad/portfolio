@@ -26,6 +26,12 @@
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Annimation */
+  --animation-duration: 300ms;
 }
 
 /* Universal tags */
@@ -87,4 +93,50 @@ p {
   font-weight: var(--weight-regular);
   color: var(--color-black);
   margin: 4px 0;
+}
+
+#navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-blue);
+  padding: 16px;
+  /* background-color: transparent; */
+  /* transition: all var(--animation-duration) ease-in-out; */
+  /* z-index: 1; */
+}
+#navbar .navbar__logo {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-white);
+}
+
+#navbar .navbar__menu {
+  display: flex;
+  margin: 0;
+}
+#navbar .navbar__menu__item {
+  padding: 8px 12px;
+  margin: 0 4px;
+  color: var(--color-white);
+  cursor: pointer;
+  border-radius: var(--size-border-radius);
+}
+#navbar .navbar__menu__item.active {
+  border: 1px solid var(--color-white);
+}
+
+#navbar .navbar__menu__item:hover {
+  background-color: var(--color-dark-pink);
+  color: var(--color-white);
+}
+#navbar .navbar__toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  /* display: none; */
 }
