@@ -95,13 +95,14 @@ p {
   margin: 4px 0;
 }
 
+/* Navbar */
 #navbar {
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-blue);
+  background-color: var(--color-dark-grey);
   padding: 16px;
   /* background-color: transparent; */
   /* transition: all var(--animation-duration) ease-in-out; */
@@ -140,3 +141,46 @@ p {
   color: var(--color-white);
   /* display: none; */
 }
+
+/* Home */
+#home {
+  background: url('/src/imgs/rainbow.png') center/cover no-repeat;
+  padding: 40px;
+  padding-top: 120px;
+  text-align: center;
+}
+
+.home__avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-light-white);
+}
+
+.home__title,
+.home__description {
+  color: var(--color-white);
+}
+
+.home__contact {
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  padding: 8px 12px;
+  margin: 24px;
+  border: 1px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+}
+.home__contact:hover {
+  background-color: var(--color-light-grey);
+}
+
+/* About */
+
+/* Skills */
+
+/* Work */
+
+/* Testimonials */
+
+/* Contact */
