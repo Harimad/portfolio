@@ -10,10 +10,13 @@
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
+  --color-light-green: #bad7c6;
   --color-blue: #73aace;
+  --color-light-blue: #cad4dd;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+  --color-light-purple: #c9b4cb;
 
   /* Font size */
   --font-large: 48px;
@@ -102,7 +105,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-dark-grey);
+  background-color: var(--color-light-purple);
   padding: 16px;
   /* background-color: transparent; */
   /* transition: all var(--animation-duration) ease-in-out; */
@@ -145,9 +148,7 @@ p {
 /* Home */
 #home {
   background: url('/src/imgs/rainbow.png') center/cover no-repeat;
-  padding: 40px;
   padding-top: 120px;
-  text-align: center;
 }
 
 .home__avatar {
@@ -172,11 +173,76 @@ p {
   border-radius: var(--size-border-radius);
 }
 .home__contact:hover {
-  background-color: var(--color-light-grey);
+  background-color: var(--color-light-purple);
+}
+
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* About */
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+.major {
+  flex: 1;
+}
 
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 70px;
+  margin: auto;
+  color: var(--color-light-purple);
+  border: 1px solid var(--color-light-purple);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__icon i {
+  transition: all var(--animation-duration) ease;
+}
+
+.major__icon i:hover {
+  transform: rotate(45deg);
+  color: var(--color-blue);
+}
+.major__title,
+.major__description {
+  color: var(--color-light-grey);
+}
+.major__description {
+  font-size: var(--font-small);
+}
+
+.about__jobs .job {
+  display: flex;
+  align-items: center;
+}
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+.job__name {
+  font-size: var(--font-small);
+}
+.job__period {
+  font-size: var(--font-micro);
+}
 /* Skills */
 
 /* Work */
