@@ -111,6 +111,10 @@ p {
   /* transition: all var(--animation-duration) ease-in-out; */
   z-index: 1;
 }
+/* #navbar.navbar--dark {
+  background-color: var(--color-pink);
+  padding: 8px;
+} */
 #navbar .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
@@ -140,17 +144,21 @@ p {
   position: absolute;
   top: 24px;
   right: 32px;
-  font-size: 24px;
+  font-size: var(--font-medium);
   color: var(--color-white);
-  /* display: none; */
+  display: none;
 }
 
 /* Home */
 #home {
   background: url('/src/imgs/rainbow.png') center/cover no-repeat;
   padding-top: 120px;
+  padding: 40px;
+  text-align: center;
 }
-
+.home__container {
+  margin-top: 120px;
+}
 .home__avatar {
   width: 250px;
   height: 250px;
@@ -482,3 +490,89 @@ p {
   opacity: 1;
   pointer-events: auto;
 } */
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+  /* Navbar */
+  #navbar .navbar__toggle-btn {
+    display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-blue);
+  }
+  /* #navbar.navbar--dark {
+    padding: 16px;
+  } */
+
+  #navbar .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  #navbar .navbar__menu.open {
+    display: block;
+  }
+  /* section */
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+  /* about */
+  .about__majors {
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .major {
+    margin-bottom: 30px;
+  }
+  /* skill */
+  .skillset {
+    flex-direction: column;
+  }
+  /* work */
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+  .project {
+    flex-grow: 1;
+  }
+  /* testimonials */
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+  #testimonials .testimonial__avatar {
+    width: 150px;
+    height: 150px;
+    margin: 16px 0;
+  }
+  .testimonial__speech-bubble {
+    order: 3;
+  }
+  /* arrow */
+  .arrow-up {
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    bottom: 15px;
+    right: 15px;
+    font-size: var(--font-medium);
+  }
+}
