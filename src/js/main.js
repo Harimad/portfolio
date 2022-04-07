@@ -17,16 +17,19 @@ $('.navbar__menu').addEventListener('click', e => {
   const dataSetLink = e.target.dataset.link
   if (dataSetLink) scrollIntoView(dataSetLink)
 })
-
+// Handle click on "contact me" button on home
 $('.home__contact').addEventListener('click', e => {
   scrollIntoView('#contact')
 })
 
 // Navbar toggle button for small screen
 
-// Handle click on "contact me" button on home
-
 // Make home slowly fade to transparent as the window scrolls down
+const homeHeight = $('#home').getBoundingClientRect().height
+document.addEventListener('scroll', () => {
+  console.log(1 - window.scrollY / homeHeight)
+  $('.home__container').style.opacity = 1 - window.scrollY / homeHeight
+})
 
 // Show "arrow up" button when scrolling down
 
