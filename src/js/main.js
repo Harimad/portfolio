@@ -9,15 +9,17 @@ document.addEventListener('scroll', () => {
 })
 
 // Handle scrolling when tapping on the navbar menu
+function scrollIntoView(tag) {
+  $(tag).scrollIntoView({ behavior: 'smooth' })
+}
+
 $('.navbar__menu').addEventListener('click', e => {
   const dataSetLink = e.target.dataset.link
-  if (dataSetLink) {
-    $(`${dataSetLink}`).scrollIntoView({ behavior: 'smooth' })
-  }
+  if (dataSetLink) scrollIntoView(dataSetLink)
 })
 
 $('.home__contact').addEventListener('click', e => {
-  $(`#contact`).scrollIntoView({ behavior: 'smooth' })
+  scrollIntoView('#contact')
 })
 
 // Navbar toggle button for small screen
