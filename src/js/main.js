@@ -9,17 +9,17 @@ document.addEventListener('scroll', () => {
 })
 
 // Handle scrolling when tapping on the navbar menu
-function scrollIntoView(tag) {
+function scrollIntoViewWithTag(tag) {
   $(tag).scrollIntoView({ behavior: 'smooth' })
 }
 
 $('.navbar__menu').addEventListener('click', e => {
   const dataSetLink = e.target.dataset.link
-  if (dataSetLink) scrollIntoView(dataSetLink)
+  if (dataSetLink) scrollIntoViewWithTag(dataSetLink)
 })
 // Handle click on "contact me" button on home
 $('.home__contact').addEventListener('click', e => {
-  scrollIntoView('#contact')
+  scrollIntoViewWithTag('#contact')
 })
 
 // Navbar toggle button for small screen
@@ -27,13 +27,25 @@ $('.home__contact').addEventListener('click', e => {
 // Make home slowly fade to transparent as the window scrolls down
 const homeHeight = $('#home').getBoundingClientRect().height
 document.addEventListener('scroll', () => {
-  console.log(1 - window.scrollY / homeHeight)
   $('.home__container').style.opacity = 1 - window.scrollY / homeHeight
+
+  // Show "arrow up" button when scrolling down
+  if (window.scrollY > homeHeight / 2) $('.arrow-up').classList.add('visible')
+  else $('.arrow-up').classList.remove('visible')
 })
 
-// Show "arrow up" button when scrolling down
-
 // Handle click on the "arrow up" button
+let arrowStop = true
+$('.arrow-up').addEventListener('click', () => {
+  if (!arrowStop) return
+
+  scrollIntoViewWithTag('#home')
+  arrowStop = false
+
+  setTimeout(() => {
+    arrowStop = true
+  }, 2000)
+})
 
 // Projects
 

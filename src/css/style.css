@@ -482,14 +482,14 @@ p {
   background-color: var(--color-blue);
   color: var(--color-white);
   pointer-events: none;
-  /* opacity: 0; */
-  /* transition: opacity var(--animation-duration) ease-in; */
+  opacity: 0;
+  transition: opacity var(--animation-duration) ease-in;
 }
 
-/* .arrow-up.visible {
+.arrow-up.visible {
   opacity: 1;
   pointer-events: auto;
-} */
+}
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
@@ -573,13 +573,5 @@ p {
     bottom: 15px;
     right: 15px;
     font-size: var(--font-medium);
-  }
-}
-@keyframes homeOpacity {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
