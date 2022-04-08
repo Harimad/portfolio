@@ -1,5 +1,6 @@
 'use strict'
 const $ = tag => document.querySelector(tag)
+const $$ = tag => document.querySelectorAll(tag)
 
 // Make navbar transparent when it is on the top
 const navbarHeight = $('#navbar').getBoundingClientRect().height
@@ -48,5 +49,25 @@ $('.arrow-up').addEventListener('click', () => {
 })
 
 // Projects
+$('.work__categories').addEventListener('click', e => {
+  const dataFilter =
+    e.target.dataset.filter || e.target.parentNode.dataset.filter
+  if (!dataFilter) return
 
-// Remove selection from the previous item and select the new one
+  // Remove selection from the previous item and select the new one
+  if ($('.category__btn.selected')) {
+    $('.category__btn.selected').classList.remove('selected')
+  }
+  e.target.classList.add('selected')
+
+  $('.work__projects').classList.add('anim-out')
+  setTimeout(() => {
+    $$('.work__projects a').forEach(item => {
+      item.classList.add('invisible')
+      if (item.dataset.type === dataFilter || dataFilter === '*') {
+        item.classList.remove('invisible')
+      }
+    })
+    $('.work__projects').classList.remove('anim-out')
+  }, 300)
+})
