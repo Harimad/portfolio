@@ -17,6 +17,9 @@ function scrollIntoViewWithTag(tag) {
 $('.navbar__menu').addEventListener('click', e => {
   const dataSetLink = e.target.dataset.link
   if (dataSetLink) scrollIntoViewWithTag(dataSetLink)
+
+  // nav 토글 버튼 안의 li 버튼 누르면 nav 토글 버튼 끄기
+  $('.navbar__menu').classList.toggle('open')
 })
 // Handle click on "contact me" button on home
 $('.home__contact').addEventListener('click', e => {
@@ -24,6 +27,9 @@ $('.home__contact').addEventListener('click', e => {
 })
 
 // Navbar toggle button for small screen
+$('.navbar__toggle-btn').addEventListener('click', e => {
+  $('.navbar__menu').classList.toggle('open')
+})
 
 // Make home slowly fade to transparent as the window scrolls down
 const homeHeight = $('#home').getBoundingClientRect().height
