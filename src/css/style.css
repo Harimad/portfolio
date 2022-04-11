@@ -132,6 +132,9 @@ p {
   border-radius: var(--size-border-radius);
   border: 1px solid transparent;
 }
+#navbar .navbar__menu__item.active {
+  border: 1px solid var(--color-white);
+}
 
 #navbar .navbar__menu__item:hover {
   border-color: var(--color-white);
