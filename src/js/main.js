@@ -10,10 +10,6 @@ document.addEventListener('scroll', () => {
 })
 
 // Handle scrolling when tapping on the navbar menu
-function scrollIntoViewWithTag(tag) {
-  $(tag).scrollIntoView({ behavior: 'smooth' })
-}
-
 $('.navbar__menu').addEventListener('click', e => {
   const dataSetLink = e.target.dataset.link
   if (dataSetLink) scrollIntoViewWithTag(dataSetLink)
@@ -121,6 +117,11 @@ const selectNavItem = selected => {
   selectedNavItem.classList.add('active')
 }
 
+function scrollIntoViewWithTag(tag) {
+  $(tag).scrollIntoView({ behavior: 'smooth' })
+  selectNavItem(navItems[sectionIds.indexOf(tag)])
+}
+
 const observerOptions = {
   root: null,
   rootMatgin: '0px',
@@ -129,7 +130,6 @@ const observerOptions = {
 
 const observerCallback = (entries, observer) => {
   entries.forEach(entry => {
-    console.log(entry)
     //어떤 요소가 화면 밖 나갈때 다음 섹션 활성화
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
       const index = sectionIds.indexOf(`#${entry.target.id}`)
@@ -150,7 +150,7 @@ window.addEventListener('wheel', () => {
   if (window.scrollY === 0) {
     selectedNavIndex = 0
   } else if (
-    Math.round(window.scrollY + window.innerHEight) ===
+    Math.floor(window.scrollY + window.innerHeight) ===
     document.body.clientHeight
   ) {
     selectedNavIndex = navItems.length - 1
